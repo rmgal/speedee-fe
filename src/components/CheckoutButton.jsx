@@ -2,7 +2,7 @@ import { useCart } from "../context/CartContext";
 import axios from "axios";
 import { loadStripe } from "@stripe/stripe-js";
 
-const stripePromise = loadStripe("pk_test_YourPublicKeyHere");
+const stripePromise = loadStripe(VITE_STRIPE_PUBLIC_KEY);
 
 const CheckoutButton = () => {
   const { cart } = useCart();
