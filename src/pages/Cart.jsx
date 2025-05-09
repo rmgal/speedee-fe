@@ -20,6 +20,9 @@
 import { useCart } from "../context/CartContext";
 import axios from "axios";
 import { loadStripe } from "@stripe/stripe-js";
+import CheckoutButton from "../components/CheckoutButton";
+
+<CheckoutButton />
 
 const stripePromise = loadStripe("pk_test_YourPublicKeyHere");
 
@@ -43,8 +46,5 @@ const CheckoutButton = () => {
 
 export default CheckoutButton;
 
-import CheckoutButton from "../components/CheckoutButton";
 
-// inside your JSX
-<CheckoutButton />
 
