@@ -9,7 +9,7 @@ const CheckoutButton = () => {
 
   const handleCheckout = async () => {
     const stripe = await stripePromise;
-    const res = await axios.post("http://localhost:5000/api/checkout/create-checkout-session", {
+    const res = await axios.post("https://speedee.onrender.com/api/checkout/create-checkout-session", {
       cartItems: cart,
     });
     window.location.href = res.data.url;

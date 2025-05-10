@@ -3,6 +3,7 @@ import CheckoutButton from "../components/CheckoutButton";
 
 const Cart = () => {
   const { cart } = useCart();
+  console.log("Cart items:", cart);
 
   return (
     <div className="p-4">
