@@ -1,10 +1,18 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useCart } from "../context/CartContext";
+import { useNavigate } from "react-router-dom";
+
 
 const Products = () => {
   const [products, setProducts] = useState([]);
   const { addToCart } = useCart();
+  const navigate = useNavigate();
+
+  const handleAddToCart = (product) => {
+    addToCart(product);
+    navigate("/cart");
+  };
 
   useEffect(() => {
     axios.get("https://speedee.onrender.com/api/products")
@@ -19,7 +27,7 @@ const Products = () => {
           <img src={product.image} alt={product.name} className="h-40 w-full object-cover" />
           <h3>{product.name}</h3>
           <p>${product.price}</p>
-          <button onClick={() => addToCart(product)} className="bg-blue-500 text-white px-4 py-2 rounded">Add to Cart</button>
+          <button onClick={() => handleAddToCart(product)} className="bg-blue-500 text-white px-4 py-2 rounded">Add to Cart</button>
         </div>
       ))}
     </div>
