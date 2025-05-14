@@ -6,14 +6,20 @@ const Cart = () => {
   console.log("Cart items:", cart);
 
   return (
-    <div className="p-6">
-      <h2 className="text-2xl font-semibold mb-4">Shopping Cart</h2>
-      {cart.map((item, index) => (
-        <div key={index} className="mb-2">
-          {item.name} - ${item.price} × {item.quantity}
-        </div>
-      ))}
-      <CheckoutButton />
+    <div className="p-4">
+      <h2 className="text-xl font-bold mb-4">Shopping Cart</h2>
+      {cart.length === 0 ? (
+        <p>Your cart is empty.</p>
+      ) : (
+        <>
+          {cart.map((item, index) => (
+            <div key={index}>
+              {item.name} - ${item.price} × {item.quantity}
+            </div>
+          ))}
+          <CheckoutButton />
+        </>
+      )}
     </div>
   );
 };
