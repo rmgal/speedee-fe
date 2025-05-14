@@ -8,6 +8,7 @@ const Products = () => {
   const [products, setProducts] = useState([]);
   const { addToCart } = useCart();
   const navigate = useNavigate();
+  const [qty, setQty] = useState(1);
 
   const handleAddToCart = (product) => {
     addToCart(product);
@@ -27,6 +28,13 @@ const Products = () => {
           <img src={product.image} alt={product.name} className="h-40 w-full object-cover" />
           <h3>{product.name}</h3>
           <p>${product.price}</p>
+          <input
+            type="number"
+            min="1"
+            value={qty}
+            onChange={(e) => setQty(Number(e.target.value))}
+            className="w-16 border rounded px-2"
+          />
           <button onClick={() => handleAddToCart(product)} className="bg-blue-500 text-white px-4 py-2 rounded">Add to Cart</button>
         </div>
       ))}

@@ -25,7 +25,7 @@ const Orders = () => {
           </div>
           <p className="text-xs text-gray-500 mt-1">Placed: {new Date(order.createdAt).toLocaleString()}</p>
           <p className="mt-2">
-            <strong>Ship To:</strong> {order.shipping?.name}, {order.shipping?.address?.line1}, {order.shipping?.address?.city}, {order.shipping?.address?.postal_code}, {order.shipping?.address?.country}
+            <strong>Ship To:</strong> {order.shipping?.name}, {order.shipping?.address?.line1}, {order.shipping?.address?.city}, {order.shipping?.address?.country} {order.shipping?.address?.postal_code} 
           </p>
 
         </div>
