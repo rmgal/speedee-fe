@@ -10,8 +10,8 @@ const Products = () => {
   const navigate = useNavigate();
   const [quantities, setQuantities] = useState({});
 
-  const handleAddToCart = (product) => {
-    addToCart(product);
+  const handleAddToCart = (product, qty) => {
+    addToCart(product, qty)
     navigate("/cart");
   };
 
@@ -45,7 +45,7 @@ const Products = () => {
             className="w-16 border rounded px-2 mr-2"
           />
           <button
-            onClick={() => addToCart(product, quantities[product._id])}
+            onClick={() => handleAddToCart(product, quantities[product._id])}
             className="bg-blue-500 text-white px-4 py-2 rounded"
           >
             Add to Cart
