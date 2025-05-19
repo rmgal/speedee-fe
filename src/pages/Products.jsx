@@ -34,8 +34,9 @@ const Products = () => {
     <div className="grid grid-cols-3 gap-4 p-10">
       {products.map((product) => (
         <div key={product._id} className="p-5 border rounded">
-          <img src={product.image} alt={product.name} className="h-40 w-full object-cover" />
+          <img src={product.image} alt={product.name} className="h-auto w-full object-cover" />
           <h3>{product.name}</h3>
+          <p>{product.description}</p>
           <p>${product.price}</p>
           <input
             type="number"
