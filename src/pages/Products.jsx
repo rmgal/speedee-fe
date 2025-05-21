@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useCart } from "../context/CartContext";
-//import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const Products = () => {
   const [products, setProducts] = useState([]);
-  const { addToCart } = useCart();
+  const { addToCart, cart } = useCart();
   // const navigate = useNavigate();
   const [quantities, setQuantities] = useState({});
 
