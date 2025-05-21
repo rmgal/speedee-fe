@@ -7,13 +7,13 @@ import { useNavigate } from "react-router-dom";
 const Products = () => {
   const [products, setProducts] = useState([]);
   const { addToCart } = useCart();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [quantities, setQuantities] = useState({});
 
-  const handleAddToCart = (product, qty) => {
-    addToCart(product, qty)
-    navigate("/cart");
-  };
+  // const handleAddToCart = (product, qty) => {
+  //   addToCart(product, qty)
+  //   navigate("/cart");
+  // };
 
   useEffect(() => {
     axios.get("https://speedee.onrender.com/api/products").then((res) => {
@@ -26,33 +26,50 @@ const Products = () => {
     });
   }, []);
 
+  // Calculate total quantity in cart
+  const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+
   const handleQuantityChange = (productId, value) => {
     setQuantities({ ...quantities, [productId]: Number(value) });
   };
 
   return (
-    <div className="grid grid-cols-5 gap-4 p-10">
-      {products.map((product) => (
-        <div key={product._id} className="p-5 border rounded">
-          <img src={product.image} alt={product.name} className="h-auto w-full object-cover" />
-          <h3>{product.name}</h3>
-          <p>{product.description}</p>
-          <p>${product.price}</p>
-          <input
-            type="number"
-            min="1"
-            value={quantities[product._id]}
-            onChange={(e) => handleQuantityChange(product._id, e.target.value)}
-            className="w-16 border rounded px-2 mr-2"
-          />
-          <button
-            onClick={() => handleAddToCart(product, quantities[product._id])}
-            className="bg-blue-500 text-white px-4 py-2 rounded"
-          >
-            Add to Cart
-          </button>
-        </div>
-      ))}
+    <div className="relative">
+      <div className="grid grid-cols-5 gap-4 p-10">
+        {products.map((product) => (
+          <div key={product._id} className="p-5 border rounded">
+            <img src={product.image} alt={product.name} className="h-auto w-full object-cover" />
+            <h3>{product.name}</h3>
+            <p class="text-sm text-opacity-75">{product.description}</p>
+            <p class="font-bold">${product.price}</p>
+            <input
+              type="number"
+              min="1"
+              value={quantities[product._id]}
+              onChange={(e) => handleQuantityChange(product._id, e.target.value)}
+              className="w-16 border rounded px-2 mr-2"
+            />
+            <button
+              onClick={() => addToCart(product, quantities[product._id])}
+              className="bg-blue-500 text-white px-4 py-2 rounded"
+            >
+              Add to Cart
+            </button>
+          </div>
+        ))}
+      </div>
+      {/* Floating Button with Badge */}
+      <Link
+        to="/cart"
+        className="fixed right-6 bottom-6 bg-green-600 text-white px-5 py-3 rounded-full shadow-lg hover:bg-green-700 transition flex items-center gap-2"
+      >
+        Go to Cart
+        {cartCount > 0 && (
+          <span className="bg-white text-green-700 text-xs font-bold px-2 py-1 rounded-full">
+            {cartCount}
+          </span>
+        )}
+      </Link>
     </div>
   );
 };
