@@ -39,9 +39,9 @@ const Products = () => {
         {products.map((product) => (
           <div key={product._id} className="p-5 border rounded">
             <img src={product.image} alt={product.name} className="h-auto w-full object-cover" />
-            <h3>{product.name}</h3>
-            <p class="text-sm text-opacity-75">{product.description}</p>
-            <p class="font-bold">${product.price}</p>
+            <h3 className="font-semibold">{product.name}</h3>
+            <p className="text-sm text-gray-600 truncate">{product.description}</p>
+            <p className="font-bold mt-1">${product.price}</p>
             <input
               type="number"
               min="1"
