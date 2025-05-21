@@ -31,7 +31,7 @@ const Products = () => {
   };
 
   return (
-    <div className="grid grid-cols-3 gap-4 p-10">
+    <div className="grid grid-cols-5 gap-4 p-10">
       {products.map((product) => (
         <div key={product._id} className="p-5 border rounded">
           <img src={product.image} alt={product.name} className="h-auto w-full object-cover" />
