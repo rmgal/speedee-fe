@@ -25,7 +25,7 @@
 // };
 
 // export default Cart;
-// frontend/src/pages/Cart.jsx
+
 import { useCart } from "../context/CartContext";
 import { FaTrash } from "react-icons/fa";
 
@@ -94,6 +94,7 @@ const Cart = () => {
           <div className="text-right font-bold text-xl pt-6">
             Total: ${total.toFixed(2)}
           </div>
+          <CheckoutButton />
         </div>
       )}
     </div>
