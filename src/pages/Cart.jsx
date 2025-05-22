@@ -27,6 +27,7 @@
 // export default Cart;
 
 import { useCart } from "../context/CartContext";
+import CheckoutButton from "../components/CheckoutButton";
 import { FaTrash } from "react-icons/fa";
 
 const Cart = () => {
