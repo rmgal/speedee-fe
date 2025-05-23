@@ -1,8 +1,8 @@
-// frontend/src/pages/ProductDetail.jsx
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useCart } from "../context/CartContext";
+import { Link } from "react-router-dom";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -34,6 +34,12 @@ const ProductDetail = () => {
           Add to Cart
         </button>
       </div>
+      <Link
+        to="/cart"
+        className="fixed bottom-6 right-6 bg-green-600 text-white px-4 py-2 rounded shadow-lg z-50"
+        >
+        Go to Cart
+        </Link>
     </div>
   );
 };
