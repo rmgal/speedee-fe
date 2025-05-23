@@ -38,17 +38,19 @@ const Products = () => {
       <div className="grid grid-cols-5 gap-4 p-10">
         {products.map((product) => (
           <div key={product._id} className="p-5 border rounded">
-            <img src={product.image} alt={product.name} className="h-auto w-full object-cover" />
-            <h3 className="font-semibold">{product.name}</h3>
-            <p className="text-sm text-gray-600 truncate">{product.description}</p>
-            <p className="font-bold mt-1">${product.price}</p>
-            <input
-              type="number"
-              min="1"
-              value={quantities[product._id]}
-              onChange={(e) => handleQuantityChange(product._id, e.target.value)}
-              className="w-16 border rounded px-2 mr-2"
-            />
+            <Link to={`/product/${product._id}`}>
+              <img src={product.image} alt={product.name} className="h-auto w-full object-cover" />
+              <h3 className="font-semibold">{product.name}</h3>
+              <p className="text-sm text-gray-600 truncate">{product.description}</p>
+              <p className="font-bold mt-1">${product.price}</p>
+              <input
+                type="number"
+                min="1"
+                value={quantities[product._id]}
+                onChange={(e) => handleQuantityChange(product._id, e.target.value)}
+                className="w-16 border rounded px-2 mr-2"
+              />
+            </Link>
             <button
               onClick={() => addToCart(product, quantities[product._id])}
               className="bg-blue-500 text-white px-4 py-2 rounded"
