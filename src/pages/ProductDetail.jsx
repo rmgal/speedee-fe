@@ -17,6 +17,9 @@ const ProductDetail = () => {
 
   if (!product) return <div className="p-10">Loading...</div>;
 
+  // Calculate total quantity in cart
+  const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+
   return (
     <div className="p-10 flex flex-col md:flex-row gap-10">
       <div className="w-full md:w-1/2">
@@ -36,10 +39,15 @@ const ProductDetail = () => {
       </div>
       <Link
         to="/cart"
-        className="fixed bottom-6 right-6 bg-green-600 text-white px-4 py-2 rounded shadow-lg z-50"
-        >
+        className="fixed right-6 bottom-6 bg-green-600 text-white px-5 py-3 rounded-full shadow-lg hover:bg-green-700 transition flex items-center gap-2"
+      >
         Go to Cart
-        </Link>
+        {cartCount > 0 && (
+          <span className="bg-white text-green-700 text-xs font-bold px-2 py-1 rounded-full">
+            {cartCount}
+          </span>
+        )}
+      </Link>
     </div>
   );
 };
