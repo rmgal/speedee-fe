@@ -3,6 +3,7 @@ import { CartProvider } from "./context/CartContext";
 import Products from "./pages/Products";
 import Cart from "./pages/Cart";
 import Orders from "./pages/Orders";
+import ProductDetail from "./pages/ProductDetail";
 
 
 const App = () => {
