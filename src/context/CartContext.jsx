@@ -20,7 +20,7 @@ export const CartProvider = ({ children }) => {
   //     setCart([...cart, { ...product, quantity }]);
   //   }
   // };
-  const addToCart = (product) => {
+  const addToCart = (product, quantity = 1) => {
     setCart((prevCart) => {
       const existing = prevCart.find((item) => item._id === product._id);
       if (existing) {
@@ -30,7 +30,7 @@ export const CartProvider = ({ children }) => {
             : item
         );
       } else {
-        return [...prevCart, { ...product }];
+        return [...prevCart, { ...product, quantity }];
       }
     });
   };
