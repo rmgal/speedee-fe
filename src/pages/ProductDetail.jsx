@@ -21,6 +21,10 @@ const ProductDetail = () => {
   // Calculate total quantity in cart
   const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
 
+  const handleQuantityChange = (productId, value) => {
+    setQuantities({ ...quantities, [productId]: Number(value) });
+  };
+
   return (
     <div className="p-10 flex flex-col md:flex-row gap-10">
       <div className="w-full md:w-1/2">
@@ -32,21 +36,13 @@ const ProductDetail = () => {
         <p className="text-xl font-semibold mb-2">${product.price}</p>
         <p className="mb-4 text-gray-700">{product.description}</p>
 
-        <div className="flex items-center gap-3 mb-4">
-            <button
-                onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-                className="bg-gray-300 px-3 py-1 rounded"
-            >
-                −
-            </button>
-            <span className="text-lg font-semibold">{quantity}</span>
-            <button
-                onClick={() => setQuantity((q) => q + 1)}
-                className="bg-gray-300 px-3 py-1 rounded"
-            >
-                +
-            </button>
-        </div>
+        <input
+            type="number"
+            min="1"
+            value={quantities[product._id]}
+            onChange={(e) => handleQuantityChange(product._id, e.target.value)}
+            className="w-16 border rounded px-2 mr-2"
+        />
         <button
           onClick={() => addToCart({...product, quantity})}
           className="bg-blue-600 text-white px-6 py-3 rounded"
