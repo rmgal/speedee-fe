@@ -8,7 +8,8 @@ const ProductDetail = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const { addToCart, cart } = useCart();
-  const [quantity, setQuantity] = useState(1);
+//   const [quantity, setQuantity] = useState(1);
+  const [quantities, setQuantities] = useState({});
 
   useEffect(() => {
     axios.get(`https://speedee.onrender.com/api/products/${id}`).then((res) => {
@@ -44,7 +45,7 @@ const ProductDetail = () => {
             className="w-16 border rounded px-2 mr-2"
         />
         <button
-          onClick={() => addToCart({...product, quantity})}
+          onClick={() => addToCart(product, quantities[product._id])}
           className="bg-blue-600 text-white px-6 py-3 rounded"
         >
           Add to Cart
