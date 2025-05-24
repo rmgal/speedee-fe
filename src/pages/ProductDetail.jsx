@@ -14,6 +14,8 @@ const ProductDetail = () => {
   useEffect(() => {
     axios.get(`https://speedee.onrender.com/api/products/${id}`).then((res) => {
       setProduct(res.data);
+      const initialQuantities = 1;
+      setQuantities(initialQuantities);
     });
   }, [id]);
 
