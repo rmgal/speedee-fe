@@ -4,6 +4,8 @@ import axios from "axios";
 import { useCart } from "../context/CartContext";
 import { Link } from "react-router-dom";
 
+const [quantity, setQuantity] = useState(1);
+
 const ProductDetail = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
@@ -30,8 +32,24 @@ const ProductDetail = () => {
         <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
         <p className="text-xl font-semibold mb-2">${product.price}</p>
         <p className="mb-4 text-gray-700">{product.description}</p>
+
+        <div className="flex items-center gap-3 mb-4">
+            <button
+                onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+                className="bg-gray-300 px-3 py-1 rounded"
+            >
+                −
+            </button>
+            <span className="text-lg font-semibold">{quantity}</span>
+            <button
+                onClick={() => setQuantity((q) => q + 1)}
+                className="bg-gray-300 px-3 py-1 rounded"
+            >
+                +
+            </button>
+        </div>
         <button
-          onClick={() => addToCart(product)}
+          onClick={() => addToCart({...product, quantity})}
           className="bg-blue-600 text-white px-6 py-3 rounded"
         >
           Add to Cart
