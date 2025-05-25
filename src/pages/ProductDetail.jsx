@@ -14,8 +14,7 @@ const ProductDetail = () => {
   useEffect(() => {
     axios.get(`https://speedee.onrender.com/api/products/${id}`).then((res) => {
       setProduct(res.data);
-      const initialQuantities = 1;
-      setQuantities(initialQuantities);
+      setQuantities({ [res.data._id]: 1 });
     });
   }, [id]);
 
@@ -42,13 +41,14 @@ const ProductDetail = () => {
         <input
             type="number"
             min="1"
-            value={quantities[product._id]}
+            value={quantities[product._id] || 1}
             onChange={(e) => handleQuantityChange(product._id, e.target.value)}
             className="w-16 border rounded px-2 mr-2"
         />
         <button
-          onClick={() => addToCart(product, quantities[product._id])}
-          className="bg-blue-600 text-white px-6 py-3 rounded"
+            //   onClick={() => addToCart(product, quantities[product._id])}
+            onClick={() => addToCart({ ...product, quantity: quantities[product._id] || 1 })}
+            className="bg-blue-600 text-white px-6 py-3 rounded"
         >
           Add to Cart
         </button>
