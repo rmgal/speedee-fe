@@ -58,7 +58,7 @@ const ProductDetail = () => {
         <input
           type="number"
           min="1"
-          value={quantity}
+          value={quantities}
           onChange={handleChange}
           className="w-20 border rounded px-3 py-1 mr-3"
         />
