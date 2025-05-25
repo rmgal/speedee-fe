@@ -33,10 +33,6 @@ const ProductDetail = () => {
         setQuantities(val);
     };
 
-  const handleAddToCart = () => {
-    addToCart({ ...product, quantities });
-  };
-
   return (
     <div className="p-10 flex flex-col md:flex-row gap-10">
       <div className="w-full md:w-1/2">
@@ -58,12 +54,12 @@ const ProductDetail = () => {
         <input
           type="number"
           min="1"
-          value={quantities}
+          value={quantities[product._id]}
           onChange={handleChange}
           className="w-20 border rounded px-3 py-1 mr-3"
         />
         <button
-              onClick={() => addToCart(product, quantities[product._id])}
+            onClick={() => addToCart(product, quantities[product._id])}
             // onClick={() => addToCart({ ...product, quantity: quantities[product._id] || 1 })}
             className="bg-blue-600 text-white px-6 py-3 rounded"
         >
