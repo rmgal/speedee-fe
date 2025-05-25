@@ -14,17 +14,27 @@ const ProductDetail = () => {
   useEffect(() => {
     axios.get(`https://speedee.onrender.com/api/products/${id}`).then((res) => {
       setProduct(res.data);
-      setQuantities({ [res.data._id]: 1 });
+      const cartItem = cart.find((item) => item._id === res.data._id);
+      setQuantities(cartItem ? cartItem.quantity : 1);
     });
-  }, [id]);
+  }, [id, cart]);
 
   if (!product) return <div className="p-10">Loading...</div>;
 
   // Calculate total quantity in cart
   const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
 
-  const handleQuantityChange = (productId, value) => {
-    setQuantities({ ...quantities, [productId]: Number(value) });
+//   const handleQuantityChange = (productId, value) => {
+//     setQuantities({ ...quantities, [productId]: Number(value) });
+//   };
+
+    const handleChange = (e) => {
+        const val = Math.max(1, Number(e.target.value));
+        setQuantities(val);
+    };
+
+  const handleAddToCart = () => {
+    addToCart({ ...product, quantities });
   };
 
   return (
@@ -38,18 +48,29 @@ const ProductDetail = () => {
         <p className="text-xl font-semibold mb-2">${product.price}</p>
         <p className="mb-4 text-gray-700">{product.description}</p>
 
-        <input
+        {/* <input
             type="number"
             min="1"
             value={quantities[product._id] || 1}
             onChange={(e) => handleQuantityChange(product._id, e.target.value)}
             className="w-16 border rounded px-2 mr-2"
+        /> */}
+        <input
+          type="number"
+          min="1"
+          value={quantity}
+          onChange={handleChange}
+          className="w-20 border rounded px-3 py-1 mr-3"
         />
         <button
+          onClick={handleAddToCart}
+          className="bg-blue-600 text-white px-6 py-3 rounded"
+        >
+        {/* <button
             //   onClick={() => addToCart(product, quantities[product._id])}
             onClick={() => addToCart({ ...product, quantity: quantities[product._id] || 1 })}
             className="bg-blue-600 text-white px-6 py-3 rounded"
-        >
+        > */}
           Add to Cart
         </button>
       </div>
