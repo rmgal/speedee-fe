@@ -31,7 +31,7 @@ const Navbar = () => {
       {/* Cart Button */}
       <Link
         to="/cart"
-        className="relative bg-blue-600 text-white px-5 py-2 rounded-full flex items-center gap-2 hover:bg-blue-700 transition"
+        className="relative bg-green-600 text-white px-5 py-2 rounded-full flex items-center gap-2 hover:bg-blue-700 transition"
       >
         <FaShoppingCart />
         <span>Cart</span>
