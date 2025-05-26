@@ -11,6 +11,7 @@ const App = () => {
   return (
     <CartProvider>
       <Router>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Products />} />
           <Route path="/cart" element={<Cart />} />
