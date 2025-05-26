@@ -59,8 +59,8 @@ const ProductDetail = () => {
           className="w-20 border rounded px-3 py-1 mr-3"
         />
         <button
-            // onClick={() => addToCart(product, quantities[product._id])}
-            onClick={() => addToCart({ ...product, quantities: quantities[product._id] || 1 })}
+            onClick={() => addToCart(product, quantities)}
+            // onClick={() => addToCart({ ...product, quantities: quantities[product._id] || 1 })}
             className="bg-blue-600 text-white px-6 py-3 rounded"
         >
           Add to Cart
