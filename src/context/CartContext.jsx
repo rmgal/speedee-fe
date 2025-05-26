@@ -16,8 +16,10 @@ export const CartProvider = ({ children }) => {
             : item
         )
       );
+      console.log("if"+quantity);
     } else {
       setCart([...cart, { ...product, quantity }]);
+      console.log("else"+quantity);
     }
   };
 

@@ -7,13 +7,7 @@ import { Link } from "react-router-dom";
 const Products = () => {
   const [products, setProducts] = useState([]);
   const { addToCart, cart } = useCart();
-  // const navigate = useNavigate();
   const [quantities, setQuantities] = useState({});
-
-  // const handleAddToCart = (product, qty) => {
-  //   addToCart(product, qty)
-  //   navigate("/cart");
-  // };
 
   useEffect(() => {
     axios.get("https://speedee.onrender.com/api/products").then((res) => {
@@ -43,13 +37,6 @@ const Products = () => {
               <h3 className="font-semibold">{product.name}</h3>
               <p className="text-sm text-gray-600 truncate">{product.description}</p>
               <p className="font-bold mt-1">${product.price}</p>
-              {/* <input
-                type="number"
-                min="1"
-                value={quantities[product._id]}
-                onChange={(e) => handleQuantityChange(product._id, e.target.value)}
-                className="w-16 border rounded px-2 mr-2"
-              /> */}
             </Link>
             <button
               onClick={() => addToCart(product, quantities[product._id])}
