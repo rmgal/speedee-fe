@@ -14,7 +14,8 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 bg-white shadow-md px-6 py-3 flex justify-between items-center">
       <div className="flex items-center gap-3">
         <Link to="/" className="text-xl font-bold text-blue-600 flex items-center gap-2">
-          <img src="https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/272501156_103642858896501_4248711037773868753_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=bWiAjhxLQ_UQ7kNvwEEj8ro&_nc_oc=Admh0gtNi6lc8WHNxRkGZgIusRd5q7KGgJM30PNsqd2RutaL8TWwMgKC3E15vsMHLz8&_nc_zt=23&_nc_ht=scontent-lax3-1.xx&_nc_gid=Tef51ZKVw6jlXOHf92qQKQ&oh=00_AfI9hK4GEOEcLpjaCe6ld6TJ4xOcgkR3p9W3QgRbtPP7cQ&oe=6839A4DA" alt="Logo" className="w-8 h-8" />
+          <img src="https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/272501156_103642858896501_4248711037773868753_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=bWiAjhxLQ_UQ7kNvwEEj8ro&_nc_oc=Admh0gtNi6lc8WHNxRkGZgIusRd5q7KGgJM30PNsqd2RutaL8TWwMgKC3E15vsMHLz8&_nc_zt=23&_nc_ht=scontent-lax3-1.xx&_nc_gid=Tef51ZKVw6jlXOHf92qQKQ&oh=00_AfI9hK4GEOEcLpjaCe6ld6TJ4xOcgkR3p9W3QgRbtPP7cQ&oe=6839A4DA" 
+          alt="Logo" className="w-10 h-10 text-red-600" />
             Speedee Music
         </Link>
       </div>
