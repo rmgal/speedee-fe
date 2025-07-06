@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useCart } from "../context/CartContext";
 import { Link } from "react-router-dom";
-import { DOMPurify } from "dompurify";
+import  DOMPurify  from "dompurify";
 
 const ProductDetail = () => {
   const { id } = useParams();
