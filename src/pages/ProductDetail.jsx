@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useCart } from "../context/CartContext";
 import { Link } from "react-router-dom";
+import DOMPurify from 'dompurify';
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -42,7 +43,7 @@ const ProductDetail = () => {
       <div className="w-full md:w-1/2">
         <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
         <p className="text-xl font-semibold mb-2">${product.price}</p>
-        <p className="mb-4 text-gray-700">{product.description}</p>
+        <p className="mb-4 text-gray-700" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(product.description) }} />
 
         {/* <input
             type="number"
