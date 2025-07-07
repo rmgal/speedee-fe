@@ -7,33 +7,16 @@ const About = () => {
         style={{ backgroundImage: "url('https://music.speedeeinc.com/speedee-banner.webp')" }} 
       >
         <div className="bg-black bg-opacity-50 w-full h-full flex items-center justify-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white">About Speedee Music</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-white">About Us</h1>
         </div>
       </div>
 
       {/* Content */}
       <div className="max-w-3xl mx-auto px-6 py-10 text-gray-800 space-y-6">
-        <p>
-          Speedee Music is a US-run business whose utmost passion is positive customer experience.
-          We are committed to providing each customer with the highest standard of customer service.
-        </p>
-
-        <p>
-          We believe that there's a bit of MUSIC in all of us. With this mantra in heart and mind,
-          we came up with quality musical instrument accessories to support both your drive in learning
-          and love in playing your favorite instruments. Our products are designed to suit all-level
-          players – from beginners to pros alike.
-        </p>
-
-        <p>
-          Please don't hesitate to ask if you have any questions, or any problems with your order.
-          We are family owned and operated so you will always get that friendly and personal touch.
-          Rest assured, we will always take care of you.
-        </p>
-
-        <p>
-          Let Speedee Music be a part of your musical journey!
-        </p>
+        <p data-start="175" data-end="411">Speedee Music is a <strong data-start="194" data-end="227">family-owned, US-run business</strong> driven by a passion for providing a <strong data-start="264" data-end="296">positive customer experience</strong>. We are committed to delivering each customer the <strong data-start="347" data-end="410">highest standard of service with a friendly, personal touch</strong>.</p>
+        <p data-start="413" data-end="722">We believe there&rsquo;s a bit of <strong data-start="441" data-end="463">music in all of us</strong>. Guided by this mantra, we have developed <strong data-start="506" data-end="548">quality musical instrument accessories</strong> to support your journey &ndash; whether you&rsquo;re learning your first notes or performing as a seasoned pro. Our products are thoughtfully designed to suit <strong data-start="696" data-end="721">players of all levels</strong>.</p>
+        <p data-start="724" data-end="922">If you have any questions or encounter any issues with your order, please don&rsquo;t hesitate to reach out. As a family-run business, we pride ourselves on ensuring that <strong data-start="889" data-end="921">you are always taken care of</strong>.</p>
+        <p data-start="924" data-end="990">Let <strong data-start="928" data-end="945">Speedee Music</strong> be a part of your <strong data-start="964" data-end="989">musical journey today</strong>.</p>
       </div>
     </div>
   );
