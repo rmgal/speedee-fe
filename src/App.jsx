@@ -6,6 +6,7 @@ import Orders from "./pages/Orders";
 import ProductDetail from "./pages/ProductDetail";
 import Navbar from "./components/Navbar";
 import About from "./pages/About";
+import Footer from "./components/Footer";
 
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/about" element={<About />} />
         </Routes>
+        <Footer/>
       </Router>
     </CartProvider>
   );
