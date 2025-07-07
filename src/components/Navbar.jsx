@@ -22,10 +22,10 @@ const Navbar = () => {
 
       {/* Desktop Menu */}
       <div className="hidden md:flex items-center gap-6 text-sm md:text-base">
-        <Link to="/" className="text-red-700 hover:text-blue-600">Products</Link>
+        <Link to="/" className="text-red-700 font-bold hover:text-blue-600">Products</Link>
         {/* <Link to="/products" className="text-gray-700 hover:text-blue-600">Products</Link> */}
-        <Link to="/about" className="text-red-700 hover:text-blue-600">About Us</Link>
-        <Link to="/contact" className="text-red-700 hover:text-blue-600">Contact Us</Link>
+        <Link to="/about" className="text-red-700 font-bold hover:text-blue-600">About Us</Link>
+        <Link to="/contact" className="text-red-700 font-bold hover:text-blue-600">Contact Us</Link>
       </div>
 
       {/* Cart Button */}
