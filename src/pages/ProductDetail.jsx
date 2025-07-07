@@ -42,16 +42,7 @@ const ProductDetail = () => {
       </div>
       <div className="w-full md:w-1/2">
         <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
-        <p className="text-xl font-semibold mb-2">${product.price}</p>
-        <p className="mb-4 text-gray-700" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(product.description) }} />
-
-        {/* <input
-            type="number"
-            min="1"
-            value={quantities[product._id] || 1}
-            onChange={(e) => handleQuantityChange(product._id, e.target.value)}
-            className="w-16 border rounded px-2 mr-2"
-        /> */}
+        <p className="text-xl font-semibold mb-2 text-blue-500">${product.price}</p>
         <input
           type="number"
           min="1"
@@ -66,6 +57,17 @@ const ProductDetail = () => {
         >
           Add to Cart
         </button>
+
+        <p className="mb-4 text-gray-700" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(product.description) }} />
+
+        {/* <input
+            type="number"
+            min="1"
+            value={quantities[product._id] || 1}
+            onChange={(e) => handleQuantityChange(product._id, e.target.value)}
+            className="w-16 border rounded px-2 mr-2"
+        /> */}
+        
       </div>
       <Link
         to="/cart"

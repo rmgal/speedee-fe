@@ -36,7 +36,7 @@ const Products = () => {
               <img src={product.image} alt={product.name} className="h-auto w-full object-cover" />
               <h3 className="font-semibold">{product.name}</h3>
               {/* <p className="text-sm text-gray-600 truncate">{product.description}</p> */}
-              <p className="font-bold mt-1">${product.price}</p>
+              <p className="font-bold mt-1 text-blue-500">${product.price}</p>
             </Link>
             <button
               onClick={() => addToCart(product, quantities[product._id])}

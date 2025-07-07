@@ -53,10 +53,10 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="absolute top-full left-0 w-full bg-white shadow-md flex flex-col px-6 py-4 md:hidden z-40">
-          <Link to="/" onClick={toggleMenu} className="py-2 text-gray-700 hover:text-blue-600">Home</Link>
-          <Link to="/products" onClick={toggleMenu} className="py-2 text-gray-700 hover:text-blue-600">Products</Link>
-          <Link to="/about" onClick={toggleMenu} className="py-2 text-gray-700 hover:text-blue-600">About</Link>
-          <Link to="/contact" onClick={toggleMenu} className="py-2 text-gray-700 hover:text-blue-600">Contact</Link>
+          <Link to="/" onClick={toggleMenu} className="py-2 text-red-700 hover:text-blue-600">Home</Link>
+          <Link to="/products" onClick={toggleMenu} className="py-2 text-red-700 hover:text-blue-600">Products</Link>
+          <Link to="/about" onClick={toggleMenu} className="py-2 text-gray-red hover:text-blue-600">About</Link>
+          <Link to="/contact" onClick={toggleMenu} className="py-2 text-red-700 hover:text-blue-600">Contact</Link>
         </div>
       )}
     </nav>
