@@ -7,7 +7,7 @@ import ProductDetail from "./pages/ProductDetail";
 import Navbar from "./components/Navbar";
 import About from "./pages/About";
 import Footer from "./components/Footer";
-
+import Contact from "./pages/Contact";
 
 const App = () => {
   return (
@@ -20,6 +20,8 @@ const App = () => {
           <Route path="/orders" element={<Orders />} />
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+
         </Routes>
         <Footer/>
       </Router>

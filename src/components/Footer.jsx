@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
         <div>
           <h2 className="text-lg font-semibold">Speedee Music</h2>
-          <p className="text-sm">© {new Date().getFullYear()} Speedee Music Inc. All rights reserved.</p>
+          <p className="text-sm">© {new Date().getFullYear()} Speedee Music, Inc. All rights reserved.</p>
         </div>
         <div className="flex space-x-4">
           <a href="/about" className="hover:text-white">About</a>
