@@ -4,7 +4,7 @@ const Contact = () => {
       {/* Hero Banner */}
       <div
         className="w-full h-60 md:h-80 bg-cover bg-center flex items-center justify-center"
-        style={{ backgroundImage: "url('https://music.speedeeinc.com/speedee-banner.webp')" }} // replace with your actual hero image path
+        style={{ backgroundImage: "url('https://music.speedeeinc.com/speedee-banner.webp')" }} 
       >
         <div className="bg-black bg-opacity-50 w-full h-full flex items-center justify-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white">Contact Us</h1>

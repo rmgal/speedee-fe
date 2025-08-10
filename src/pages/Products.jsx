@@ -29,7 +29,7 @@ const Products = () => {
 
   return (
     <div className="relative">
-      <div className="grid grid-cols-5 gap-4 p-10">
+      <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 p-10">
         {products.map((product) => (
           <div key={product._id} className="p-5 border rounded">
             <Link to={`/product/${product._id}`}>
